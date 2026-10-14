@@ -1,0 +1,97 @@
+# =====================================================================
+#  CONTENIDO DEL SITIO DEL XXII CIC 2027
+# =====================================================================
+#  Cómo editar este archivo:
+#   1. Escriba el texto entre las comillas, después de los dos puntos.
+#        Bien:   envio_resumenes: "15 de marzo de 2027"
+#   2. Lo que se deje vacío ("") aparece en la página como «Por completar».
+#   3. Las líneas que empiezan con # son notas: la página no las muestra.
+#   4. Respete los espacios del inicio de cada línea. Use espacios, no la tecla Tab.
+#   5. Para las listas, copie un bloque de ejemplo completo (desde el guion)
+#      y cambie los datos. Mantenga el guion y la sangría.
+#   6. Guarde con «Commit changes». La página se actualiza en 1 o 2 minutos.
+# =====================================================================
+
+
+# ---------- Formulario de propuestas ----------
+# Enlace completo del Google Forms o EasyChair (empieza con https://)
+formulario_propuestas: ""
+
+
+# ---------- Fechas importantes (pestaña «Para autores») ----------
+fechas:
+  envio_resumenes: ""
+  notificacion_aceptacion: ""
+  inscripcion_ponentes: ""
+
+
+# ---------- Convocatoria ----------
+convocatoria:
+  # Extensión del resumen, idioma, plazos y cómo enviar
+  requisitos: ""
+
+
+# ---------- Comités ----------
+# Ejemplo de cómo se agrega una persona (quite el # del inicio de las dos líneas):
+#  - nombre: "Dra. Ana Pérez"
+#    institucion: "Universidad Autónoma de Santo Domingo (UASD)"
+
+comite_organizador:
+
+comite_cientifico:
+
+
+# ---------- Para autores ----------
+autores:
+  preparacion_resumen: ""
+  inscripcion: ""
+  instrucciones_ponencias: ""
+  instrucciones_posteres: ""
+
+
+# ---------- Conferencias magistrales (pestaña «Programa») ----------
+# Ejemplo:
+#  - nombre: "Dra. Nombre Apellido"
+#    institucion: "Universidad de ..."
+#    pais: "España"
+#    titulo: "Título de la conferencia"
+
+conferencistas:
+
+
+# ---------- Programa por días ----------
+# Si se deja vacío, la página muestra el programa provisional.
+# Si se llena, se muestra solo lo que esté aquí, en este orden.
+# Ejemplo:
+#  - dia: "Mar 22 jun"
+#    hora: "9:00 a. m."
+#    actividad: "Acto inaugural del XXII CIC"
+
+programa:
+
+
+# ---------- Cursos y talleres ----------
+# Si se deja vacío, se muestra la lista provisional.
+# Ejemplo:
+#  - "Escritura científica"
+#  - "Análisis de datos con R"
+
+cursos:
+
+
+# ---------- Sede ----------
+sede:
+  como_llegar: ""
+  alojamiento: ""
+
+
+# ---------- Publicaciones ----------
+publicaciones:
+  # Enlace del PDF del Libro de Resúmenes del XXI CIC (empieza con https://)
+  libro_xxi_enlace: ""
+
+
+# ---------- Contacto ----------
+contacto:
+  correo: ""
+  telefono: ""

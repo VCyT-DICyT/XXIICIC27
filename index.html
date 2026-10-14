@@ -99,6 +99,7 @@ main section{padding-block:48px 64px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;display:grid;gap:8px;align-content:start;min-width:0}
 .card p{color:var(--muted);font-size:.95rem}
 .num{font-family:var(--f-mono);font-size:.78rem;color:var(--sea);letter-spacing:.06em}
+a.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
 .pending{display:inline-block;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.04em;padding:2px 8px;border:1px dashed var(--sargazo);color:var(--sargazo);background:var(--sargazo-soft);border-radius:4px}
 .note{border-left:3px solid var(--sargazo);background:var(--sargazo-soft);padding:14px 16px;border-radius:0 6px 6px 0;font-size:.92rem}
 ul.plain{margin:0;padding-left:1.1em;display:grid;gap:6px}
@@ -252,7 +253,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div class="card"><h3>Qué se busca</h3>
         <p>Investigaciones con resultados, desarrolladas en comunidades, hospitales, centros educativos, zonas agrícolas y territorios productivos, que respondan a desafíos sociales, económicos y ambientales del país y de la región.</p></div>
     </div>
-    <div class="note">Requisitos de extensión del resumen, idioma y plazos de envío: <span class="pending">Por completar</span></div>
+    <div class="note">Requisitos de extensión del resumen, idioma y plazos de envío: <span data-campo="convocatoria.requisitos"><span class="pending">Por completar</span></span></div>
     <a class="btn solid" href="#proponer" style="justify-self:start">Proponer una actividad</a>
   </div>
 </section>
@@ -268,8 +269,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div class="card"><span class="eyebrow">Institución anfitriona</span><h3>UNPHU</h3><p>Universidad Nacional Pedro Henríquez Ureña</p></div>
     </div>
     <div class="grid2">
-      <div class="card"><h3>Comité organizador</h3><p><span class="pending">Por completar</span> Nombres e instituciones.</p></div>
-      <div class="card"><h3>Comité científico</h3><p><span class="pending">Por completar</span> Evaluadores por eje temático.</p></div>
+      <div class="card"><h3>Comité organizador</h3><div data-lista="comite_organizador"><p><span class="pending">Por completar</span> Nombres e instituciones.</p></div></div>
+      <div class="card"><h3>Comité científico</h3><div data-lista="comite_cientifico"><p><span class="pending">Por completar</span> Evaluadores por eje temático.</p></div></div>
     </div>
   </div>
 </section>
@@ -299,17 +300,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="head"><span class="eyebrow">Para autores</span><h2>Fechas, envío e instrucciones</h2></div>
     <h3>Fechas importantes</h3>
     <div class="dates">
-      <div><span>Envío de propuestas y resúmenes</span><span class="pending">Por completar</span></div>
-      <div><span>Notificación de aceptación</span><span class="pending">Por completar</span></div>
-      <div><span>Inscripción de ponentes</span><span class="pending">Por completar</span></div>
+      <div><span>Envío de propuestas y resúmenes</span><span data-campo="fechas.envio_resumenes" data-negrita><span class="pending">Por completar</span></span></div>
+      <div><span>Notificación de aceptación</span><span data-campo="fechas.notificacion_aceptacion" data-negrita><span class="pending">Por completar</span></span></div>
+      <div><span>Inscripción de ponentes</span><span data-campo="fechas.inscripcion_ponentes" data-negrita><span class="pending">Por completar</span></span></div>
       <div><span>Semana Dominicana de la Ciencia</span><b>20–27 jun 2027</b></div>
       <div><span>XXII Congreso Internacional de Investigación Científica</span><b>22–25 jun 2027</b></div>
     </div>
     <div class="grid2" style="margin-top:12px">
-      <div class="card"><h3>Preparación del resumen</h3><p>Normas de formato, extensión, palabras clave y estilo de citación (APA 7). <span class="pending">Por completar</span></p></div>
-      <div class="card"><h3>Inscripción</h3><p>Costo, categorías (ponente, asistente, estudiante) y forma de registro. <span class="pending">Por completar</span></p></div>
-      <div class="card"><h3>Instrucciones para ponencias</h3><p>Duración de la exposición, turno de preguntas y formato de diapositivas. <span class="pending">Por completar</span></p></div>
-      <div class="card"><h3>Instrucciones para pósteres</h3><p>Medidas, orientación y horario de montaje. <span class="pending">Por completar</span></p></div>
+      <div class="card"><h3>Preparación del resumen</h3><p data-campo="autores.preparacion_resumen">Normas de formato, extensión, palabras clave y estilo de citación (APA 7). <span class="pending">Por completar</span></p></div>
+      <div class="card"><h3>Inscripción</h3><p data-campo="autores.inscripcion">Costo, categorías (ponente, asistente, estudiante) y forma de registro. <span class="pending">Por completar</span></p></div>
+      <div class="card"><h3>Instrucciones para ponencias</h3><p data-campo="autores.instrucciones_ponencias">Duración de la exposición, turno de preguntas y formato de diapositivas. <span class="pending">Por completar</span></p></div>
+      <div class="card"><h3>Instrucciones para pósteres</h3><p data-campo="autores.instrucciones_posteres">Medidas, orientación y horario de montaje. <span class="pending">Por completar</span></p></div>
     </div>
   </div>
 </section>
@@ -322,8 +323,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="card" style="gap:14px">
       <h3>Formulario de propuestas</h3>
       <p>Complete el formulario en línea con el tipo de actividad, el eje temático, los datos de los autores y un resumen de hasta 300 palabras.</p>
-      <!-- Reemplazar URL_DEL_FORMULARIO por el enlace del Google Forms o EasyChair -->
-      <a class="btn solid" href="URL_DEL_FORMULARIO" target="_blank" rel="noopener" style="justify-self:start">Abrir formulario de propuestas</a>
+      <a class="btn solid" id="btnForm" data-enlace="formulario_propuestas" target="_blank" rel="noopener" style="justify-self:start" aria-disabled="true">Formulario disponible próximamente</a>
     </div>
   </div>
 </section>
@@ -334,12 +334,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="head"><span class="eyebrow">Programa</span><h2>Agenda académica</h2>
       <p>Conferencias magistrales, simposios, paneles, cursos, talleres, pósteres e investigaciones concurrentes, del martes 22 al viernes 25 de junio de 2027.</p></div>
     <h3>Conferencias magistrales</h3>
-    <div class="card"><h3>Conferencistas por confirmar</h3><p><span class="pending">Por completar</span> Nombre, institución, país y título de cada conferencia.</p></div>
+    <div class="grid2" data-lista="conferencistas"><div class="card"><h3>Conferencistas por confirmar</h3><p><span class="pending">Por completar</span> Nombre, institución, país y título de cada conferencia.</p></div></div>
     <h3 style="margin-top:12px">Programa por días</h3>
     <div class="tablewrap">
       <table>
         <thead><tr><th>Día</th><th>Hora</th><th>Actividad</th></tr></thead>
-        <tbody>
+        <tbody data-lista="programa">
           <tr><td class="t">Dom 20 jun</td><td class="t">—</td><td>Inicio de la <b>Semana Dominicana de la Ciencia</b></td></tr>
           <tr><td class="t">Mar 22 jun</td><td class="t"><span class="pending">Por completar</span></td><td><b>Acto inaugural del XXII CIC</b> · UNPHU</td></tr>
           <tr><td class="t">Mar 22 jun</td><td class="t"><span class="pending">Por completar</span></td><td>Conferencia magistral y sesiones concurrentes por eje</td></tr>
@@ -351,7 +351,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </table>
     </div>
     <h3 style="margin-top:12px">Cursos y talleres</h3>
-    <div class="chips">
+    <div class="chips" data-lista="cursos">
       <span class="chip">Escritura científica</span><span class="chip">Análisis de datos</span><span class="chip">Divulgación científica</span><span class="chip">Investigación aplicada</span><span class="chip">Uso responsable de tecnologías emergentes</span><span class="pending">Lista final por completar</span>
     </div>
   </div>
@@ -363,8 +363,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="head"><span class="eyebrow">Sede</span><h2>Universidad Nacional Pedro Henríquez Ureña</h2>
       <p>El XXII CIC se celebra en la UNPHU, en Santo Domingo, del 22 al 25 de junio de 2027.</p></div>
     <div class="grid2">
-      <div class="card"><h3>Cómo llegar</h3><p>Campus, salones y transporte. <span class="pending">Por completar</span></p></div>
-      <div class="card"><h3>Alojamiento</h3><p>Hoteles cercanos y tarifas para participantes internacionales. <span class="pending">Por completar</span></p></div>
+      <div class="card"><h3>Cómo llegar</h3><p data-campo="sede.como_llegar">Campus, salones y transporte. <span class="pending">Por completar</span></p></div>
+      <div class="card"><h3>Alojamiento</h3><p data-campo="sede.alojamiento">Hoteles cercanos y tarifas para participantes internacionales. <span class="pending">Por completar</span></p></div>
     </div>
   </div>
 </section>
@@ -387,7 +387,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <h3>XXI CIC 2026 · edición anterior</h3>
         <div><div class="eyebrow">ISBN</div><div class="isbn">978-9945-9484-9-3</div></div>
         <div><div class="eyebrow">Editor</div><p>Staling Cordero Brito</p></div>
-        <div><div class="eyebrow">Formato</div><p>PDF · enlace de descarga <span class="pending">Por completar</span></p></div>
+        <div><div class="eyebrow">Formato</div><p>PDF · <span data-campo="publicaciones.libro_xxi_enlace" data-tipo="enlace" data-texto="Descargar el libro">enlace de descarga <span class="pending">Por completar</span></span></p></div>
       </div>
     </div>
   </div>
@@ -415,7 +415,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <section id="contacto" data-page hidden>
   <div class="wrap stack">
     <div class="head"><span class="eyebrow">Contacto</span><h2>Escríbanos</h2>
-      <p>Dirección de Investigaciones Científicas y Tecnológicas, Viceministerio de Ciencia y Tecnología, MESCyT. Correo y teléfono: <span class="pending">Por completar</span></p></div>
+      <p>Dirección de Investigaciones Científicas y Tecnológicas, Viceministerio de Ciencia y Tecnología, MESCyT. Correo: <span data-campo="contacto.correo"><span class="pending">Por completar</span></span> · Teléfono: <span data-campo="contacto.telefono"><span class="pending">Por completar</span></span></p></div>
     <form id="f">
       <label for="cn">Nombre<input id="cn" required></label>
       <label for="ce">Correo electrónico<input id="ce" type="email" required></label>
@@ -461,5 +461,60 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script>
+/* Carga contenido.yml y rellena la página. Si algo falla, la página queda como está. */
+(async function(){
+  if(!window.jsyaml) return;
+  var c;
+  try{
+    var r=await fetch('contenido.yml',{cache:'no-cache'});
+    if(!r.ok) return;
+    c=jsyaml.load(await r.text())||{};
+  }catch(e){ console.warn('contenido.yml no se pudo leer:',e); return; }
+  function get(path){return path.split('.').reduce(function(o,k){return o&&o[k]},c)}
+  function txt(v){return (v===null||v===undefined)?'':String(v).trim()}
+  function mk(tag,text,cls){var e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e}
+  function safeUrl(u){return /^https?:\/\//i.test(u)?u:''}
+
+  document.querySelectorAll('[data-campo]').forEach(function(el){
+    var v=txt(get(el.getAttribute('data-campo'))); if(!v) return;
+    el.textContent='';
+    if(el.getAttribute('data-tipo')==='enlace'){
+      var u=safeUrl(v); if(!u) return;
+      var a=mk('a',el.getAttribute('data-texto')||u); a.href=u; a.target='_blank'; a.rel='noopener'; el.appendChild(a);
+    } else if(el.hasAttribute('data-negrita')){ el.appendChild(mk('b',v)); }
+    else { el.textContent=v; }
+  });
+
+  var f=safeUrl(txt(c.formulario_propuestas)), b=document.getElementById('btnForm');
+  if(b&&f){b.href=f;b.removeAttribute('aria-disabled');b.textContent='Abrir formulario de propuestas';}
+
+  function lista(key){var v=c[key];return Array.isArray(v)&&v.length?v:null}
+  function box(key){return document.querySelector('[data-lista="'+key+'"]')}
+
+  ['comite_organizador','comite_cientifico'].forEach(function(k){
+    var v=lista(k), el=box(k); if(!v||!el) return;
+    var ul=mk('ul',undefined,'plain'); 
+    v.forEach(function(p){ if(!p) return; var li=mk('li'); li.appendChild(mk('b',txt(p.nombre||p))); if(p.institucion) li.appendChild(document.createTextNode(' · '+txt(p.institucion))); ul.appendChild(li); });
+    el.textContent=''; el.appendChild(ul);
+  });
+
+  var v=lista('conferencistas'), el=box('conferencistas');
+  if(v&&el){ el.textContent='';
+    v.forEach(function(p){ if(!p) return; var d=mk('div',undefined,'card');
+      d.appendChild(mk('span','Conferencia magistral','eyebrow')); d.appendChild(mk('h3',txt(p.nombre)));
+      var meta=[txt(p.institucion),txt(p.pais)].filter(Boolean).join(', '); if(meta) d.appendChild(mk('p',meta));
+      if(txt(p.titulo)) d.appendChild(mk('p','«'+txt(p.titulo)+'»'));
+      el.appendChild(d); }); }
+
+  v=lista('programa'); el=box('programa');
+  if(v&&el){ el.textContent='';
+    v.forEach(function(r){ if(!r) return; var tr=mk('tr'); tr.appendChild(mk('td',txt(r.dia),'t')); tr.appendChild(mk('td',txt(r.hora),'t')); tr.appendChild(mk('td',txt(r.actividad))); el.appendChild(tr); }); }
+
+  v=lista('cursos'); el=box('cursos');
+  if(v&&el){ el.textContent=''; v.forEach(function(x){ if(txt(x)) el.appendChild(mk('span',txt(x),'chip')); }); }
+})();
+</script>
 </body>
 </html>
