@@ -171,6 +171,12 @@ button:disabled{opacity:.6;cursor:default}
 footer{border-top:1px solid var(--line);padding-block:28px;font-size:.85rem;color:var(--muted);background:var(--surface)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center}
 @media (prefers-reduced-motion:no-preference){main section{animation:in .25s ease-out}@keyframes in{from{transform:translateY(6px)}to{transform:none}}}
+/* Retratos de la presidencia y coordinación */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.person{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:28px 20px 24px;display:grid;justify-items:center;gap:16px;text-align:center}
+.avatar{width:148px;height:148px;max-width:100%;border-radius:50%;object-fit:cover;display:block;background:var(--sea-soft);box-shadow:0 0 0 4px var(--surface),0 0 0 6px var(--sea)}
+.person figcaption{display:grid;gap:6px;justify-items:center}
+.person p{color:var(--muted);font-size:.95rem;max-width:32ch}
 /* Acento verde de la UNPHU, sede del XXII CIC */
 .unphu-tag{color:var(--unphu-lima)}
 .unphu-tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--unphu-lima);margin-right:8px;vertical-align:1px}
@@ -276,12 +282,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   <div class="wrap stack">
     <div class="head"><span class="eyebrow">Comités</span><h2>Organización del congreso</h2>
       <p>El XXII CIC es organizado por el Ministerio de Educación Superior, Ciencia y Tecnología, bajo la coordinación del Viceministerio de Ciencia y Tecnología.</p></div>
-    <div class="grid3">
-      <div class="card"><span class="eyebrow">Presidencia</span><h3>Dr. Genaro Rodríguez Martínez</h3><p>Viceministro de Ciencia y Tecnología, MESCyT</p></div>
-      <div class="card"><span class="eyebrow">Coordinación y edición</span><h3>Staling Cordero Brito</h3><p>Director de Investigaciones Científicas y Tecnológicas, MESCyT</p></div>
-      <div class="card host"><span class="eyebrow">Institución anfitriona</span><h3>UNPHU</h3><p>Universidad Nacional Pedro Henríquez Ureña</p></div>
+    <div class="people">
+      <figure class="person">
+        <img class="avatar" src="foto-genaro-rodriguez.jpg" alt="Dr. Genaro Rodríguez Martínez" width="320" height="320" loading="lazy">
+        <figcaption><span class="eyebrow">Presidencia</span><h3>Dr. Genaro Rodríguez Martínez</h3><p>Viceministro de Ciencia y Tecnología, MESCyT</p></figcaption>
+      </figure>
+      <figure class="person">
+        <img class="avatar" src="foto-staling-cordero.jpg" alt="Staling Cordero-Brito" width="320" height="320" loading="lazy">
+        <figcaption><span class="eyebrow">Coordinación y edición</span><h3>Staling Cordero-Brito</h3><p>Director de Investigaciones Científicas y Tecnológicas, MESCyT</p></figcaption>
+      </figure>
     </div>
-    <div class="grid2">
+    <div class="grid3">
+      <div class="card host"><span class="eyebrow">Institución anfitriona</span><h3>UNPHU</h3><p>Universidad Nacional Pedro Henríquez Ureña</p></div>
       <div class="card"><h3>Comité organizador</h3><div data-lista="comite_organizador"><p><span class="pending">Por completar</span> Nombres e instituciones.</p></div></div>
       <div class="card"><h3>Comité científico</h3><div data-lista="comite_cientifico"><p><span class="pending">Por completar</span> Evaluadores por eje temático.</p></div></div>
     </div>
