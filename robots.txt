@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stalingcorderobrito.github.io/XXIICIC27/sitemap.xml
