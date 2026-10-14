@@ -32,7 +32,7 @@
 :root{
   --bg:#f4f6fa; --surface:#ffffff; --ink:#0d1b33; --muted:#4a5a74; --line:#d6dde8;
   --sea:#003670; --sea-soft:#e3eaf4; --sargazo:#c23539; --sargazo-soft:#fbe8e9;
-  --hero-bg:#003670; --hero-ink:#f3f6fb; --hero-accent:#ff4d5e;
+  --hero-bg:#003670; --hero-ink:#f3f6fb; --hero-accent:#ff4d5e; --unphu:#439441; --unphu-lima:#8cc63e;
   --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --f-body:"Public Sans",ui-sans-serif,system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -40,11 +40,11 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0a1424; --surface:#111e33; --ink:#e4eaf4; --muted:#9aa8bf; --line:#22324d;
   --sea:#8fb2ea; --sea-soft:#17284a; --sargazo:#ff6b78; --sargazo-soft:#3a1820;
-  --hero-bg:#001d40; --hero-ink:#f3f6fb; --hero-accent:#ff6b78; color-scheme:dark}}
+  --hero-bg:#001d40; --hero-ink:#f3f6fb; --hero-accent:#ff6b78; --unphu:#6cbf69; --unphu-lima:#9fd45a; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0a1424; --surface:#111e33; --ink:#e4eaf4; --muted:#9aa8bf; --line:#22324d;
   --sea:#8fb2ea; --sea-soft:#17284a; --sargazo:#ff6b78; --sargazo-soft:#3a1820;
-  --hero-bg:#001d40; --hero-ink:#f3f6fb; --hero-accent:#ff6b78; color-scheme:dark}
+  --hero-bg:#001d40; --hero-ink:#f3f6fb; --hero-accent:#ff6b78; --unphu:#6cbf69; --unphu-lima:#9fd45a; color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;margin:0}
 a{color:var(--sea)}
@@ -119,11 +119,11 @@ ul.plain li b{color:var(--ink)}
 .week div{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:10px 6px;text-align:center;display:grid;gap:2px}
 .week b{font-family:var(--f-display);font-size:1.3rem;font-variant-numeric:tabular-nums}
 .week small{font-size:.7rem;color:var(--muted)}
-.week .cic{background:var(--sea);border-color:var(--sea);color:var(--surface)}
-.week .cic small{color:var(--surface);opacity:.85}
+.week .cic{background:#439441;border-color:#439441;color:#ffffff}
+.week .cic small{color:#ffffff;opacity:.9}
 .legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.85rem;color:var(--muted)}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid var(--line);background:var(--surface)}
-.legend i.c{background:var(--sea);border-color:var(--sea)}
+.legend i.c{background:#439441;border-color:#439441}
 @media (max-width:520px){.week{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* Fechas */
@@ -153,7 +153,7 @@ tr:last-child td{border-bottom:0}
 .timeline{display:grid;gap:0;border-left:2px solid var(--line);margin-left:8px}
 .timeline div{position:relative;padding:0 0 22px 22px;display:grid;gap:2px}
 .timeline div::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--sea)}
-.timeline div.now::before{background:var(--sargazo);border-color:var(--sargazo)}
+.timeline div.now::before{background:var(--unphu);border-color:var(--unphu)}
 .timeline .y{font-family:var(--f-mono);font-size:.8rem;color:var(--sea)}
 .timeline p{color:var(--muted);font-size:.93rem}
 
@@ -171,6 +171,12 @@ button:disabled{opacity:.6;cursor:default}
 footer{border-top:1px solid var(--line);padding-block:28px;font-size:.85rem;color:var(--muted);background:var(--surface)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center}
 @media (prefers-reduced-motion:no-preference){main section{animation:in .25s ease-out}@keyframes in{from{transform:translateY(6px)}to{transform:none}}}
+/* Acento verde de la UNPHU, sede del XXII CIC */
+.unphu-tag{color:var(--unphu-lima)}
+.unphu-tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--unphu-lima);margin-right:8px;vertical-align:1px}
+.card.host{border-color:var(--unphu);border-top:4px solid var(--unphu)}
+.card.host .eyebrow,.sede-head .eyebrow{color:var(--unphu)}
+#sede .card{border-top:4px solid var(--unphu)}
 </style>
 </head>
 <body>
@@ -208,7 +214,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div class="eyebrow">Ministerio de Educación Superior, Ciencia y Tecnología · República Dominicana</div>
       <h1>XXII Congreso Internacional de <em>Investigación Científica</em></h1>
       <p class="lede">El principal encuentro científico del país vuelve en su vigésima segunda edición, como parte de la Semana Dominicana de la Ciencia.</p>
-      <div class="meta"><span><b>22–25</b> de junio de 2027</span><span>UNPHU, Santo Domingo</span><span>Semana Dominicana de la Ciencia · 20–27 de junio</span></div>
+      <div class="meta"><span><b>22–25</b> de junio de 2027</span><span class="unphu-tag">UNPHU, Santo Domingo</span><span>Semana Dominicana de la Ciencia · 20–27 de junio</span></div>
       <div class="btns"><a class="btn solid" href="#proponer">Proponer actividad</a><a class="btn ghost" href="#convocatoria">Ver convocatoria</a></div>
       </div>
       <div class="plaque"><img src="logo-mescyt.png" alt="Gobierno de la República Dominicana · Ministerio de Educación Superior, Ciencia y Tecnología (MESCyT)" width="480" height="248"></div>
@@ -273,7 +279,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="grid3">
       <div class="card"><span class="eyebrow">Presidencia</span><h3>Dr. Genaro Rodríguez Martínez</h3><p>Viceministro de Ciencia y Tecnología, MESCyT</p></div>
       <div class="card"><span class="eyebrow">Coordinación y edición</span><h3>Staling Cordero Brito</h3><p>Director de Investigaciones Científicas y Tecnológicas, MESCyT</p></div>
-      <div class="card"><span class="eyebrow">Institución anfitriona</span><h3>UNPHU</h3><p>Universidad Nacional Pedro Henríquez Ureña</p></div>
+      <div class="card host"><span class="eyebrow">Institución anfitriona</span><h3>UNPHU</h3><p>Universidad Nacional Pedro Henríquez Ureña</p></div>
     </div>
     <div class="grid2">
       <div class="card"><h3>Comité organizador</h3><div data-lista="comite_organizador"><p><span class="pending">Por completar</span> Nombres e instituciones.</p></div></div>
@@ -367,7 +373,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <!-- SEDE -->
 <section id="sede" data-page hidden>
   <div class="wrap stack">
-    <div class="head"><span class="eyebrow">Sede</span><h2>Universidad Nacional Pedro Henríquez Ureña</h2>
+    <div class="head sede-head"><span class="eyebrow">Sede · Institución anfitriona</span><h2>Universidad Nacional Pedro Henríquez Ureña</h2>
       <p>El XXII CIC se celebra en la UNPHU, en Santo Domingo, del 22 al 25 de junio de 2027.</p></div>
     <div class="grid2">
       <div class="card"><h3>Cómo llegar</h3><p data-campo="sede.como_llegar">Campus, salones y transporte. <span class="pending">Por completar</span></p></div>
