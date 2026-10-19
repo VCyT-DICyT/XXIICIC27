@@ -32,13 +32,33 @@ convocatoria:
 
 
 # ---------- Comités ----------
-# Ejemplo de cómo se agrega una persona (quite el # del inicio de las dos líneas):
+# El Comité Organizador (Dr. Genaro Rodríguez y Dr. Staling Cordero Brito) y los
+# coordinadores de cada eje se editan en index.html, porque llevan foto.
+# Aquí se anotan los INTEGRANTES del comité de cada eje temático.
+# Ejemplo (quite el # del inicio de las dos líneas):
 #  - nombre: "Dra. Ana Pérez"
 #    institucion: "Universidad Autónoma de Santo Domingo (UASD)"
 
-comite_organizador:
+# Eje 01 · Ciencias Biológicas y Biomédicas (coordina Dr. Carlos Rodríguez Peña)
+comite_eje_01:
 
-comite_cientifico:
+# Eje 02 · Ciencias Ambientales, Agroalimentarias y de la Tierra
+comite_eje_02:
+
+# Eje 03 · Ciencias Físicas, Químicas y de los Materiales
+comite_eje_03:
+
+# Eje 04 · Ciencias Computacionales e Ingeniería
+comite_eje_04:
+
+# Eje 05 · Procesos Industriales y Manufactura
+comite_eje_05:
+
+# Eje 06 · Ciencias Sociales y Humanísticas
+comite_eje_06:
+
+# Eje 07 · Matemática, Fronteras Interdisciplinarias y Aplicaciones Emergentes
+comite_eje_07:
 
 
 # ---------- Para autores ----------
