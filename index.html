@@ -86,6 +86,11 @@ nav.tabs a[aria-current="page"]{color:var(--sea);background:var(--sea-soft)}
 .hero .ord{position:absolute;right:-10px;bottom:-60px;font-family:var(--f-display);font-weight:800;font-size:clamp(9rem,26vw,20rem);line-height:1;color:#ffffff;opacity:.07;pointer-events:none}
 .hero .formulas{position:absolute;inset:0;pointer-events:none;z-index:0;font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-style:italic;color:#ffffff;opacity:.13}
 .hero .formulas span{position:absolute;white-space:nowrap;transform-origin:left center}
+.hero .rayas{position:absolute;top:-6%;right:-4%;width:52%;height:80%;transform:rotate(-16deg);pointer-events:none;z-index:0}
+.hero .rayas span{position:absolute;left:0;border-radius:2px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:0;animation:raya 7s linear infinite;will-change:transform,opacity}
+@keyframes raya{0%{transform:translateX(-320px);opacity:0}15%{opacity:.75}80%{opacity:.75}100%{transform:translateX(780px);opacity:0}}
+@media (max-width:760px){.hero .rayas{width:100%;right:-20%;opacity:.6}}
+@media (prefers-reduced-motion:reduce){.hero .rayas span{animation:none;opacity:.35;transform:translateX(120px)}}
 @media (max-width:760px){.hero .formulas .m{display:none}.hero .formulas{opacity:.10}}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .btn{display:inline-block;padding:11px 18px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.95rem}
@@ -286,6 +291,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <span class="m" style="left:93%;top:88%;font-size:1.1rem;transform:rotate(4deg)">η = W / Q</span>
       <span style="left:40%;top:93%;font-size:1.1rem;transform:rotate(-2deg)">x̄ = Σxᵢ / n</span>
       <span class="m" style="left:3%;top:93%;font-size:0.95rem;transform:rotate(-2deg)">6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</span>
+    </div>
+
+    <div class="rayas" aria-hidden="true">
+      <span style="top:8%;width:240px;height:2px;--c:#ffffff;animation-duration:5.5s;animation-delay:-0s"></span>
+      <span style="top:18%;width:160px;height:2px;--c:#ff4d5e;animation-duration:7s;animation-delay:-1.2s"></span>
+      <span style="top:30%;width:300px;height:1px;--c:#ffffff;animation-duration:6.5s;animation-delay:-2.6s"></span>
+      <span style="top:42%;width:200px;height:2px;--c:#8cc63e;animation-duration:8s;animation-delay:-0.6s"></span>
+      <span style="top:55%;width:260px;height:1px;--c:#ffffff;animation-duration:6s;animation-delay:-3.8s"></span>
+      <span style="top:66%;width:180px;height:2px;--c:#ff4d5e;animation-duration:7.5s;animation-delay:-4.6s"></span>
+      <span style="top:78%;width:220px;height:1px;--c:#8cc63e;animation-duration:6.8s;animation-delay:-2s"></span>
+      <span style="top:88%;width:280px;height:2px;--c:#ffffff;animation-duration:9s;animation-delay:-5.4s"></span>
     </div>
 
     <div class="ord" aria-hidden="true">XXII</div>
