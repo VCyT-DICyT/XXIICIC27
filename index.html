@@ -1011,7 +1011,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         </p>
 
         <a class="btn solid"
-           href="https://forms.cloud.microsoft/r/zXDMHLPFQJ?origin=lprLink"
+           href="https://forms.cloud.microsoft/r/zXDMHLPFQJ?origin=lprLink" data-goatcounter-click="formulario-simposios"
            target="_blank"
            rel="noopener noreferrer">
           Formulario de Simposios
@@ -1027,7 +1027,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         </p>
 
         <a class="btn solid"
-           href="https://forms.cloud.microsoft/r/TYKL0XJK99?origin=lprLink"
+           href="https://forms.cloud.microsoft/r/TYKL0XJK99?origin=lprLink" data-goatcounter-click="formulario-cursos-talleres-paneles"
            target="_blank"
            rel="noopener noreferrer">
           Formulario de Cursos, Talleres y Paneles
@@ -1043,7 +1043,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         </p>
 
         <a class="btn solid"
-           href="https://forms.cloud.microsoft/r/HxpAdA7ug6?origin=lprLink"
+           href="https://forms.cloud.microsoft/r/HxpAdA7ug6?origin=lprLink" data-goatcounter-click="formulario-ponencias-carteles"
            target="_blank"
            rel="noopener noreferrer">
           Formulario de Ponencias y Carteles
@@ -1276,7 +1276,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     var cur=nav.querySelector('a[aria-current]');
     if(cur){var l=cur.offsetLeft-nav.offsetLeft;if(l<nav.scrollLeft||l+cur.offsetWidth>nav.scrollLeft+nav.clientWidth)nav.scrollLeft=l-16;}
     try{window.scrollTo(0,0)}catch(e){}
+    if(primera){primera=false}else{try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:location.pathname+'#'+id,title:id})}catch(e){}}
   }
+  var primera=true;
   /* Las pestañas se cambian al hacer clic, sin depender de la dirección de la página */
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a[href^="#"]');
@@ -1349,5 +1351,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   if(v&&el){ el.textContent=''; v.forEach(function(x){ if(txt(x)) el.appendChild(mk('span',txt(x),'chip')); }); }
 })();
 </script>
+<script>window.goatcounter={path:function(){return location.pathname+(location.hash||'#inicio')}};</script>
+<script data-goatcounter="https://xxiicic27.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
