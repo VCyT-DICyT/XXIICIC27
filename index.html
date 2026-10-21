@@ -218,6 +218,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 .rol{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .miembros{display:grid;gap:6px}
 .avatar.ini{display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:2.8rem;letter-spacing:.02em;color:var(--sea);background:var(--sea-soft)}
+.people.tec{grid-template-columns:repeat(auto-fill,minmax(190px,250px));gap:16px}
+.people.tec .person{padding:20px 14px 18px;gap:12px}
+.people.tec .avatar{width:104px;height:104px;box-shadow:0 0 0 3px var(--surface),0 0 0 4px var(--sea)}
+.people.tec .avatar.ini{font-size:2rem}
+.people.tec h3{font-size:1rem}
 .eje-ico{display:grid;place-items:center;width:58px;height:58px;border-radius:14px;background:var(--sea-soft);color:var(--sea);margin-bottom:6px;transition:transform .25s ease}
 .eje-ico svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .eje-ico .a{stroke:var(--sargazo);fill:var(--sargazo)}
@@ -620,7 +625,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <h3>Comité Técnico</h3>
       </div>
 
-      <div class="people">
+      <div class="people tec">
 
         <figure class="person">
           <img class="avatar" src="foto-johanna-alix.jpg" alt="Johanna Alix" width="320" height="320" loading="lazy">
