@@ -217,6 +217,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 .avatar.vacio{border:2px dashed var(--line);box-shadow:none;background:var(--sea-soft)}
 .rol{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .miembros{display:grid;gap:6px}
+.eje-ico{display:grid;place-items:center;width:58px;height:58px;border-radius:14px;background:var(--sea-soft);color:var(--sea);margin-bottom:6px;transition:transform .25s ease}
+.eje-ico svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.eje-ico .a{stroke:var(--sargazo);fill:var(--sargazo)}
+.eje-ico .g{stroke:var(--unphu)}
+#ejes .card:hover .eje-ico{transform:translateY(-3px) rotate(-4deg)}
+@media (prefers-reduced-motion:reduce){.eje-ico{transition:none}}
 .coord+.coord{border-top:0;margin-top:-12px}
 /* Acento verde de la UNPHU, sede del XXII CIC */
 .unphu-tag{color:var(--unphu-lima)}
@@ -747,6 +753,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="grid3">
 
       <div class="card">
+        <span class="eje-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><path d="M10 3c0 6 12 7 12 13S10 23 10 29"/><path d="M22 3c0 6-12 7-12 13s12 7 12 13"/><path class="g" d="M12 7h8M13.5 11h5M13.5 21h5M12 25h8"/></svg></span>
         <span class="num">EJE 01</span>
         <h3>Ciencias Biológicas y Biomédicas</h3>
         <p>
@@ -756,6 +763,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </div>
 
       <div class="card">
+        <span class="eje-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><path d="M6 25C6 12 14 5 27 4c0 13-7 21-21 21z"/><path class="g" d="M6 25L19 12M12 19h5M15 16v-4"/><path d="M3 29h26"/></svg></span>
         <span class="num">EJE 02</span>
         <h3>Ciencias Ambientales, Agroalimentarias y de la Tierra</h3>
         <p>
@@ -765,6 +773,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </div>
 
       <div class="card">
+        <span class="eje-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><ellipse cx="16" cy="16" rx="13" ry="5"/><ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="13" ry="5" transform="rotate(-60 16 16)"/><circle class="a" cx="16" cy="16" r="2.4"/></svg></span>
         <span class="num">EJE 03</span>
         <h3>Ciencias Físicas, Químicas y de los Materiales</h3>
         <p>
@@ -773,6 +782,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </div>
 
       <div class="card">
+        <span class="eje-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><rect x="9" y="9" width="14" height="14" rx="2"/><rect class="a" x="13" y="13" width="6" height="6" rx="1"/><path d="M13 4v5M19 4v5M13 23v5M19 23v5M4 13h5M4 19h5M23 13h5M23 19h5"/></svg></span>
         <span class="num">EJE 04</span>
         <h3>Ciencias Computacionales e Ingeniería</h3>
         <p>
@@ -782,6 +792,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </div>
 
       <div class="card">
+        <span class="eje-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><circle cx="12" cy="19" r="7.6" stroke-width="3.4" stroke-dasharray="2.98 2.99"/><circle cx="12" cy="19" r="5.6"/><circle class="a" cx="12" cy="19" r="2"/><circle cx="24" cy="8" r="4.6" stroke-width="3" stroke-dasharray="2.41 2.41"/><circle cx="24" cy="8" r="3.2"/></svg></span>
         <span class="num">EJE 05</span>
         <h3>Procesos Industriales y Manufactura</h3>
         <p>
@@ -790,6 +801,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </div>
 
       <div class="card">
+        <span class="eje-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><circle cx="11" cy="11" r="4"/><path d="M3 27c0-5 3.6-8 8-8s8 3 8 8"/><circle class="g" cx="22.5" cy="12" r="3.2"/><path class="g" d="M20 19.6c4.6-.9 9 1.6 9 7.4"/></svg></span>
         <span class="num">EJE 06</span>
         <h3>Ciencias Sociales y Humanísticas </h3>
         <p>
@@ -798,6 +810,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       </div>
 
       <div class="card" style="border-color:var(--sea)">
+        <span class="eje-ico" aria-hidden="true"><svg viewBox="0 0 32 32" width="34" height="34"><path d="M6 8l10-2M6 8l10 8M6 8l10 10M6 24l10-18M6 24l10-8M6 24l10 2M16 6l10 10M16 16h10M16 26l10-10"/><circle cx="6" cy="8" r="2.4"/><circle cx="6" cy="24" r="2.4"/><circle cx="16" cy="6" r="2.4"/><circle cx="16" cy="16" r="2.4"/><circle cx="16" cy="26" r="2.4"/><circle class="a" cx="26" cy="16" r="2.8"/></svg></span>
         <span class="num">EJE 07</span>
         <h3>Matemática, Fronteras Interdisciplinarias y Aplicaciones Emergentes</h3>
         <p>
