@@ -117,6 +117,36 @@ header.top{overflow:hidden}
 .btn.ghost{border:1px solid rgba(255,255,255,.45);color:var(--hero-ink)}
 
 /* Franja de cifras */
+.cuenta{background:linear-gradient(180deg,var(--hero-bg),#00285a);color:var(--hero-ink);overflow:hidden}
+.cuenta-in{padding-block:30px 34px;display:grid;gap:26px}
+.cuenta-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
+.cuenta-eb{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;opacity:.9;display:flex;align-items:center;gap:10px}
+.cuenta .dot{width:8px;height:8px;border-radius:50%;background:var(--unphu-lima);animation:latido 1.8s infinite}
+@keyframes latido{0%{box-shadow:0 0 0 0 rgba(140,198,62,.7)}70%{box-shadow:0 0 0 10px rgba(140,198,62,0)}100%{box-shadow:0 0 0 0 rgba(140,198,62,0)}}
+.tminus{display:flex;align-items:baseline;gap:6px;font-family:var(--f-display);font-weight:800;line-height:.9;margin-top:10px}
+.tminus .t{font-size:clamp(2.4rem,7vw,4.4rem);color:var(--hero-accent)}
+.tminus b{font-size:clamp(4rem,13vw,8rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tminus .u{font-size:clamp(1.2rem,3vw,1.8rem);opacity:.85;margin-left:6px}
+.cuenta-sub{margin:10px 0 0;opacity:.85;max-width:56ch;font-size:.95rem}
+.reloj{display:flex;gap:10px}
+.reloj div{min-width:78px;text-align:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:10px 8px 8px}
+.reloj b{display:block;font-family:var(--f-mono);font-size:2rem;font-weight:500;font-variant-numeric:tabular-nums}
+.reloj span{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.ruta{position:relative;height:44px}
+.ruta-linea{position:absolute;left:0;right:0;top:21px;height:3px;border-radius:3px;background:rgba(255,255,255,.18)}
+.ruta-linea i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:linear-gradient(90deg,var(--unphu-lima),#ffffff)}
+.ruta .hito{position:absolute;top:15px;width:15px;height:15px;margin-left:-7px;border-radius:50%;background:var(--hero-bg);border:3px solid rgba(255,255,255,.55)}
+.ruta .hito.hecho{border-color:var(--unphu-lima)}
+.ruta .hito.meta{border-color:var(--hero-accent);width:19px;height:19px;top:13px;margin-left:-9px}
+.cohete{position:absolute;top:6px;margin-left:-15px;transform:rotate(90deg);animation:flota 2.4s ease-in-out infinite;filter:drop-shadow(0 0 6px rgba(255,255,255,.35))}
+@keyframes flota{50%{transform:rotate(90deg) translateX(-3px)}}
+.hitos-lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.hitos-lista li{display:grid;gap:2px;padding:10px 14px;border-left:3px solid rgba(255,255,255,.3);background:rgba(255,255,255,.05);border-radius:0 8px 8px 0}
+.hitos-lista li.prox{border-left-color:var(--hero-accent);background:rgba(255,77,94,.12)}
+.hitos-lista li.hecho{opacity:.6;border-left-color:var(--unphu-lima)}
+.hitos-lista strong{font-size:.95rem}
+.hitos-lista small{font-family:var(--f-mono);font-size:.74rem;opacity:.85}
+@media (prefers-reduced-motion:reduce){.cohete,.cuenta .dot{animation:none}}
 .figlabel{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 16px 0;background:var(--surface)}
 .figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));border-bottom:1px solid var(--line);background:var(--surface)}
 .figures div{padding:12px 16px 18px;border-right:1px solid var(--line)}
@@ -341,6 +371,31 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div><b>62</b><span>Carteles Científicos</span></div>
     <div><b>218</b><span>Ponencias e Investigaciones Concurrentes</span></div>
   </div>
+
+  <section class="cuenta" aria-labelledby="cuenta-t">
+    <div class="wrap cuenta-in">
+      <div class="cuenta-top">
+        <div>
+          <span class="cuenta-eb" id="cuenta-t"><span class="dot"></span>Cuenta regresiva · XXII CIC 2027</span>
+          <div class="tminus"><span class="t">T–</span><b id="cd-dias">—</b><span class="u">días</span></div>
+          <p class="cuenta-sub" id="cd-sub">para la inauguración del XXII Congreso Internacional de Investigación Científica · 22 de junio de 2027 · UNPHU</p>
+        </div>
+        <div class="reloj" aria-label="Horas, minutos y segundos restantes">
+          <div><b id="cd-h">00</b><span>horas</span></div>
+          <div><b id="cd-m">00</b><span>min</span></div>
+          <div><b id="cd-s">00</b><span>seg</span></div>
+        </div>
+      </div>
+
+      <div class="ruta" aria-hidden="true">
+        <div class="ruta-linea"><i id="cd-avance"></i></div>
+        <div id="cd-hitos"></div>
+        <span class="cohete" id="cd-cohete"><svg viewBox="0 0 32 32" width="30" height="30"><path d="M16 2c5 4 7 10 6 17l-6 4-6-4c-1-7 1-13 6-17z" fill="#ffffff"/><circle cx="16" cy="12" r="2.6" fill="#003670"/><path d="M10 19l-4 5 5-1M22 19l4 5-5-1" fill="#ff4d5e"/><path d="M14 24c0 3 1 5 2 6 1-1 2-3 2-6" fill="#8cc63e"/></svg></span>
+      </div>
+
+      <ul class="hitos-lista" id="cd-lista"></ul>
+    </div>
+  </section>
 
   <div class="wrap" style="padding-block:48px 64px;display:grid;gap:36px">
 
@@ -1322,6 +1377,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     else { el.textContent=v; }
   });
 
+  window.__cicContenido=c; try{window.dispatchEvent(new CustomEvent('cic:contenido',{detail:c}))}catch(e){}
   var f=safeUrl(txt(c.formulario_propuestas)), b=document.getElementById('btnForm');
   if(b&&f){b.href=f;b.removeAttribute('aria-disabled');b.textContent='Abrir formulario de propuestas';}
 
@@ -1349,6 +1405,56 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
   v=lista('cursos'); el=box('cursos');
   if(v&&el){ el.textContent=''; v.forEach(function(x){ if(txt(x)) el.appendChild(mk('span',txt(x),'chip')); }); }
+})();
+</script>
+<script>
+/* Cuenta regresiva T– y ruta hasta el XXII CIC */
+(function(){
+  var META=new Date('2027-06-22T00:00:00-04:00'), FIN=new Date('2027-06-26T00:00:00-04:00'), INICIO=new Date('2026-10-21T00:00:00-04:00');
+  var $=function(i){return document.getElementById(i)}; if(!$('cd-dias')) return;
+  var MES={enero:0,febrero:1,marzo:2,abril:3,mayo:4,junio:5,julio:6,agosto:7,septiembre:8,setiembre:8,octubre:9,noviembre:10,diciembre:11};
+  function fecha(t){var m=String(t||'').toLowerCase().match(/(\d{1,2})\s+de\s+([a-záéíóú]+)(?:\s+de)?\s+(\d{4})/);if(!m||MES[m[2]]===undefined)return null;return new Date(Date.UTC(+m[3],MES[m[2]],+m[1],4));}
+  var hitos=[
+    {n:'Semana Dominicana de la Ciencia y la Tecnología',d:new Date('2027-06-20T00:00:00-04:00')},
+    {n:'Inauguración del XXII CIC',d:META,meta:true}
+  ];
+  function dias(a,b){return Math.floor((b-a)/864e5)}
+  function fmt(d){return d.toLocaleDateString('es-DO',{day:'numeric',month:'long',year:'numeric',timeZone:'America/Santo_Domingo'})}
+  function pintar(){
+    var now=new Date(), span=META-INICIO;
+    var lin=$('cd-hitos'), lis=$('cd-lista'); lin.textContent=''; lis.textContent='';
+    var orden=hitos.slice().sort(function(a,b){return a.d-b.d}), prox=null;
+    orden.forEach(function(h){
+      var p=Math.max(0,Math.min(100,(h.d-INICIO)/span*100)), hecho=h.d<=now;
+      var dot=document.createElement('span'); dot.className='hito'+(hecho?' hecho':'')+(h.meta?' meta':''); dot.style.left=p+'%'; lin.appendChild(dot);
+      var li=document.createElement('li'); if(hecho) li.className='hecho'; else if(!prox){prox=h; li.className='prox';}
+      var s=document.createElement('strong'); s.textContent=h.n; var sm=document.createElement('small');
+      var dd=dias(now,h.d); sm.textContent=fmt(h.d)+' · '+(hecho?'cumplido':(dd===1?'falta 1 día':'faltan '+dd+' días'));
+      li.appendChild(s); li.appendChild(sm); lis.appendChild(li);
+    });
+  }
+  function tic(){
+    var now=new Date(), ms=META-now;
+    var pct=Math.max(0,Math.min(100,(now-INICIO)/(META-INICIO)*100));
+    $('cd-avance').style.width=pct+'%'; $('cd-cohete').style.left=pct+'%';
+    if(ms<=0){
+      $('cd-dias').textContent='0';
+      $('cd-sub').textContent= now<FIN ? '¡El XXII Congreso Internacional de Investigación Científica está en curso! · UNPHU, Santo Domingo' : 'Gracias por participar en el XXII Congreso Internacional de Investigación Científica.';
+      ['cd-h','cd-m','cd-s'].forEach(function(i){$(i).textContent='00'}); return;
+    }
+    var d=Math.floor(ms/864e5), h=Math.floor(ms/36e5)%24, m=Math.floor(ms/6e4)%60, s=Math.floor(ms/1e3)%60;
+    $('cd-dias').textContent=d.toLocaleString('es-DO');
+    $('cd-h').textContent=('0'+h).slice(-2); $('cd-m').textContent=('0'+m).slice(-2); $('cd-s').textContent=('0'+s).slice(-2);
+  }
+  function aplicar(c){
+    var f=(c&&c.fechas)||{};
+    [['envio_resumenes','Cierre de envío de resúmenes'],['notificacion_aceptacion','Notificación de aceptación'],['inscripcion_ponentes','Cierre de inscripción de ponentes']].forEach(function(k){
+      var d=fecha(f[k[0]]); if(d) hitos.push({n:k[1],d:d});
+    });
+    pintar();
+  }
+  window.addEventListener('cic:contenido',function(e){aplicar(e.detail)});
+  pintar(); if(window.__cicContenido) aplicar(window.__cicContenido); tic(); setInterval(tic,1000);
 })();
 </script>
 <script>window.goatcounter={path:function(){return location.pathname+(location.hash||'#inicio')}};</script>
