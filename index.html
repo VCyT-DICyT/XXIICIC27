@@ -95,6 +95,16 @@ nav.tabs a[aria-current="page"]{color:var(--sea);background:var(--sea-soft)}
 .radio b:nth-child(6){animation-delay:3s}
 @keyframes giro{to{transform:rotate(360deg)}}
 @keyframes onda{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+header.top{overflow:hidden}
+.top .logo{position:relative}
+.top .logo img{position:relative;z-index:1}
+.radio.mini{color:var(--ink)}
+.radio.mini i:nth-child(1){width:96px;height:96px;margin:-48px 0 0 -48px;border-top-color:var(--sea);border-right-color:currentColor;opacity:.8}
+.radio.mini i:nth-child(2){width:112px;height:112px;margin:-56px 0 0 -56px}
+.radio.mini i:nth-child(3){width:128px;height:128px;margin:-64px 0 0 -64px}
+.radio.mini b{width:92px;height:92px;margin:-46px 0 0 -46px;border-color:currentColor}
+.radio.mini b{animation-name:onda-mini}
+@keyframes onda-mini{0%{transform:scale(.9);opacity:.35}100%{transform:scale(1.45);opacity:0}}
 @media (prefers-reduced-motion:reduce){.radio i,.radio b{animation:none}.radio b{opacity:.25}}
 @media (max-width:760px){.hero-grid{grid-template-columns:1fr}.plaque{display:none}}
 .hero .ord{position:absolute;right:-10px;bottom:-60px;font-family:var(--f-display);font-weight:800;font-size:clamp(9rem,26vw,20rem);line-height:1;color:#ffffff;opacity:.07;pointer-events:none}
@@ -224,7 +234,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="XXII CIC 2027, inicio">
-      <span class="logo"><img src="logo-mescyt.png" alt="Gobierno de la República Dominicana · MESCyT" width="89" height="46"></span>
+      <span class="logo"><span class="radio mini" aria-hidden="true"><i></i><i></i><i></i><b></b><b></b><b></b></span><img src="logo-mescyt.png" alt="Gobierno de la República Dominicana · MESCyT" width="89" height="46"></span>
       <b>XXII <span>CIC</span> 2027</b>
     </a>
     <nav class="tabs" aria-label="Secciones del congreso">
