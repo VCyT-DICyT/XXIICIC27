@@ -10,7 +10,10 @@
 <meta property="og:locale" content="es_DO">
 <meta property="og:title" content="XXII Congreso Internacional de Investigación Científica 2027 (XXII CIC)">
 <meta property="og:description" content="MESCyT · UNPHU, Santo Domingo · 22 al 25 de junio de 2027 · Semana Dominicana de la Ciencia">
-<meta property="og:image" content="https://vcyt-dicyt.github.io/XXIICIC27/logo-mescyt.png">
+<meta property="og:image" content="https://vcyt-dicyt.github.io/XXIICIC27/og-xxiicic27.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" type="image/svg+xml" href="favicon-xxiicic27.svg">
 <meta property="og:url" content="https://vcyt-dicyt.github.io/XXIICIC27/">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Event",
@@ -26,25 +29,25 @@
 </script>
 <title>XXII Congreso Internacional de Investigación Científica 2027 (XXII CIC) · MESCyT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;1,300;1,400&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: sitio de congreso con barra de pestañas fija; colores institucionales MESCyT (azul y rojo); franja de cifras como firma visual */
+/* Layout: sitio de congreso con barra de pestañas fija; línea gráfica XXII CIC 2027 (azul noche, verde neón, crema) con colores institucionales MESCyT */
 :root{
   --bg:#f4f6fa; --surface:#ffffff; --ink:#0d1b33; --muted:#4a5a74; --line:#d6dde8;
   --sea:#003670; --sea-soft:#e3eaf4; --sargazo:#c23539; --sargazo-soft:#fbe8e9;
-  --hero-bg:#003670; --hero-ink:#f3f6fb; --hero-accent:#c53539; --unphu:#439441; --unphu-lima:#8cc63e;
-  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --hero-bg:#0E1C30; --hero-ink:#f3f6fb; --hero-accent:#72D470; --neon:#72D470; --cic-azul:#6292C6; --unphu:#439441; --unphu-lima:#8cc63e;
+  --f-display:"Montserrat",ui-sans-serif,system-ui,sans-serif;
   --f-body:"Public Sans",ui-sans-serif,system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0a1424; --surface:#111e33; --ink:#e4eaf4; --muted:#9aa8bf; --line:#22324d;
   --sea:#8fb2ea; --sea-soft:#17284a; --sargazo:#ff6b78; --sargazo-soft:#3a1820;
-  --hero-bg:#001d40; --hero-ink:#f3f6fb; --hero-accent:#c53539; --unphu:#6cbf69; --unphu-lima:#9fd45a; color-scheme:dark}}
+  --hero-bg:#0a1626; --hero-ink:#f3f6fb; --hero-accent:#72D470; --neon:#72D470; --cic-azul:#6292C6; --unphu:#6cbf69; --unphu-lima:#9fd45a; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0a1424; --surface:#111e33; --ink:#e4eaf4; --muted:#9aa8bf; --line:#22324d;
   --sea:#8fb2ea; --sea-soft:#17284a; --sargazo:#ff6b78; --sargazo-soft:#3a1820;
-  --hero-bg:#001d40; --hero-ink:#f3f6fb; --hero-accent:#c53539; --unphu:#6cbf69; --unphu-lima:#9fd45a; color-scheme:dark}
+  --hero-bg:#0a1626; --hero-ink:#f3f6fb; --hero-accent:#72D470; --neon:#72D470; --cic-azul:#6292C6; --unphu:#6cbf69; --unphu-lima:#9fd45a; color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;margin:0}
 a{color:var(--sea)}
@@ -63,8 +66,11 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backgroun
 .brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;white-space:nowrap}
 .logo{display:flex;align-items:center;background:#ffffff;border-radius:6px;padding:4px 8px}
 .logo img{height:46px;width:auto;display:block}
-.brand b{font-family:var(--f-display);font-weight:800;font-size:1.1rem;padding-left:12px;border-left:1px solid var(--line)}
-.brand b span{color:var(--sargazo)}
+.brand .cic{height:52px;width:auto;display:block;padding-left:12px;border-left:1px solid var(--line)}
+.brand .cic.osc{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand .cic.cla{display:none}:root:not([data-theme="light"]) .brand .cic.osc{display:block}}
+:root[data-theme="dark"] .brand .cic.cla{display:none}:root[data-theme="dark"] .brand .cic.osc{display:block}
+@media (max-width:420px){.brand .cic{height:38px}}
 nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin;min-width:0;flex:1}
 nav.tabs a{font-size:.88rem;font-weight:600;color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:6px;white-space:nowrap}
 nav.tabs a:hover{color:var(--ink);background:var(--sea-soft)}
@@ -72,10 +78,13 @@ nav.tabs a[aria-current="page"]{color:var(--sea);background:var(--sea-soft)}
 @media (max-width:640px){.top .wrap{flex-wrap:wrap;gap:8px}nav.tabs{flex-basis:100%}}
 
 /* Portada */
-.hero{background:var(--hero-bg);color:var(--hero-ink);padding-block:56px 48px;position:relative;overflow:hidden;border-bottom:6px solid #c23539}
+.hero{background:radial-gradient(90% 70% at 85% 0%,rgba(98,146,198,.22),transparent 60%),radial-gradient(70% 60% at 0% 100%,rgba(114,212,112,.10),transparent 70%),linear-gradient(180deg,#0b1729 0%,#0E1C30 55%,#0a1424 100%);color:var(--hero-ink);padding-block:52px 48px;position:relative;overflow:hidden;border-bottom:4px solid var(--neon);box-shadow:0 4px 18px -6px rgba(114,212,112,.55)}
+.hero .particulas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero h1.logo-h1{margin:14px 0 4px;line-height:0}
+.hero h1.logo-h1 img{width:min(100%,600px);height:auto;display:block;filter:drop-shadow(0 6px 22px rgba(0,0,0,.35))}
 .hero .eyebrow{color:rgba(243,246,251,.78)}
 .hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;margin-top:12px;letter-spacing:-.02em}
-.hero h1 em{font-style:normal;color:var(--hero-accent)}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--hero-accent)}
 .hero .lede{margin-top:18px;font-size:1.1rem;opacity:.92}
 .hero .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:26px;font-family:var(--f-mono);font-size:.9rem}
 .hero .meta span b{color:var(--unphu-lima);font-weight:700}
@@ -88,8 +97,8 @@ nav.tabs a[aria-current="page"]{color:var(--sea);background:var(--sea-soft)}
 .radio i,.radio b{position:absolute;border-radius:50%}
 .radio i{border:2px solid transparent;animation:giro 9s linear infinite}
 .radio i:nth-child(1){width:330px;height:330px;margin:-165px 0 0 -165px;border-top-color:#ffffff;border-right-color:rgba(255,255,255,.35)}
-.radio i:nth-child(2){width:380px;height:380px;margin:-190px 0 0 -190px;border-bottom-color:#c53539;border-left-color:rgba(197,53,57,.4);animation-duration:13s;animation-direction:reverse}
-.radio i:nth-child(3){width:430px;height:430px;margin:-215px 0 0 -215px;border-top-color:#8cc63e;border-left-color:rgba(140,198,62,.3);animation-duration:17s}
+.radio i:nth-child(2){width:380px;height:380px;margin:-190px 0 0 -190px;border-bottom-color:#72D470;border-left-color:rgba(114,212,112,.35);animation-duration:13s;animation-direction:reverse}
+.radio i:nth-child(3){width:430px;height:430px;margin:-215px 0 0 -215px;border-top-color:#6292C6;border-left-color:rgba(98,146,198,.35);animation-duration:17s}
 .radio b{width:300px;height:300px;margin:-150px 0 0 -150px;border:1px solid rgba(255,255,255,.55);opacity:0;animation:onda 4.5s ease-out infinite}
 .radio b:nth-child(5){animation-delay:1.5s}
 .radio b:nth-child(6){animation-delay:3s}
@@ -113,11 +122,12 @@ header.top{overflow:hidden}
 @media (max-width:760px){.hero .formulas .m{display:none}.hero .formulas{opacity:.10}}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .btn{display:inline-block;padding:11px 18px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.95rem}
-.btn.solid{background:#c23539;color:#ffffff}
+.btn.solid{background:var(--neon);color:#0E1C30;box-shadow:0 0 0 0 rgba(114,212,112,.5);transition:box-shadow .25s}
+.btn.solid:hover{box-shadow:0 0 22px rgba(114,212,112,.55)}
 .btn.ghost{border:1px solid rgba(255,255,255,.45);color:var(--hero-ink)}
 
 /* Franja de cifras */
-.cuenta{background:linear-gradient(180deg,#00285a,var(--hero-bg));color:var(--hero-ink);overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.cuenta{background:linear-gradient(180deg,#0a1424,#0E1C30);color:var(--hero-ink);overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
 .cuenta-in{padding-block:14px 16px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px 32px}
 .cuenta-eb{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85;display:flex;align-items:center;gap:8px}
 .cuenta .dot{width:7px;height:7px;border-radius:50%;background:var(--unphu-lima);animation:latido 1.8s infinite}
@@ -134,7 +144,7 @@ header.top{overflow:hidden}
 .reloj span{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
 .ruta{position:relative;height:28px}
 .ruta-linea{position:absolute;left:0;right:0;top:13px;height:2px;border-radius:2px;background:rgba(255,255,255,.18)}
-.ruta-linea i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:2px;background:linear-gradient(90deg,var(--unphu-lima),#ffffff)}
+.ruta-linea i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:2px;background:linear-gradient(90deg,var(--cic-azul),var(--neon))}
 .ruta .hito{position:absolute;top:9px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--hero-bg);border:2px solid rgba(255,255,255,.55)}
 .ruta .hito.hecho{border-color:var(--unphu-lima)}
 .ruta .hito.meta{border-color:var(--hero-accent);width:13px;height:13px;top:7.5px;margin-left:-6.5px}
@@ -281,7 +291,7 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="XXII CIC 2027, inicio">
       <span class="logo"><span class="radio mini" aria-hidden="true"><i></i><i></i><i></i><b></b><b></b><b></b></span><img src="logo-mescyt.png" alt="Gobierno de la República Dominicana · MESCyT" width="89" height="46"></span>
-      <b>XXII <span>CIC</span> 2027</b>
+      <img class="cic cla" src="logo-xxiicic27-claro.svg" alt="XXII CIC 2027" width="173" height="52"><img class="cic osc" src="logo-xxiicic27-oscuro.svg" alt="" aria-hidden="true" width="173" height="52">
     </a>
     <nav class="tabs" aria-label="Secciones del congreso">
       <a href="#inicio">Inicio</a>
@@ -309,8 +319,8 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
           Ministerio de Educación Superior, Ciencia y Tecnología · República Dominicana
         </div>
 
-        <h1>
-          XXII Congreso Internacional de <em>Investigación Científica</em>
+        <h1 class="logo-h1">
+          <img src="logo-xxiicic27-oscuro.svg" alt="XXII Congreso Internacional de Investigación Científica · XXII CIC 2027" width="600" height="181">
         </h1>
 
         <p class="lede">
@@ -341,18 +351,20 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
       </div>
     </div>
 
+    <canvas class="particulas" aria-hidden="true"></canvas>
+
     <div class="formulas" aria-hidden="true">
       <span style="left:1%;top:15%;font-size:1.6rem;transform:rotate(-6deg)">E = mc²</span>
       <span class="m" style="left:0.5%;top:44%;font-size:1.1rem;transform:rotate(4deg)">H′ = −Σ pᵢ ln pᵢ</span>
       <span style="left:1.5%;top:76%;font-size:1.2rem;transform:rotate(-3deg)">O(n log n)</span>
-      <span class="m" style="left:57%;top:32%;font-size:1.0rem;transform:rotate(-4deg)">∫ e^(−x²) dx = √π</span>
+      <span class="m" style="left:58%;top:76%;font-size:1.0rem;transform:rotate(-4deg)">∫ e^(−x²) dx = √π</span>
       <span style="left:87%;top:60%;font-size:1.3rem;transform:rotate(-4deg)">iħ ∂ψ/∂t = Ĥψ</span>
       <span class="m" style="left:64%;top:50%;font-size:1.05rem;transform:rotate(3deg)">dN/dt = rN(1 − N/K)</span>
       <span class="m" style="left:55%;top:57%;font-size:1.2rem;transform:rotate(5deg)">PV = nRT</span>
       <span style="left:81%;top:49%;font-size:1.4rem;transform:rotate(-5deg)">e^(iπ) + 1 = 0</span>
       <span style="left:67%;top:61%;font-size:1.15rem;transform:rotate(-3deg)">θ ← θ − η ∇L(θ)</span>
       <span class="m" style="left:0.5%;top:60%;font-size:1.1rem;transform:rotate(3deg)">∇ · E = ρ / ε₀</span>
-      <span class="m" style="left:55%;top:19%;font-size:1.05rem;transform:rotate(2deg)">σ(z) = 1 / (1 + e⁻ᶻ)</span>
+      <span class="m" style="left:46%;top:85%;font-size:1.05rem;transform:rotate(2deg)">σ(z) = 1 / (1 + e⁻ᶻ)</span>
       <span style="left:52%;top:42%;font-size:0.95rem;transform:rotate(1deg)">5′–ATG·CGT·TAC–3′</span>
       <span class="m" style="left:2%;top:28%;font-size:1.1rem;transform:rotate(4deg)">η = W / Q</span>
       <span style="left:40%;top:93%;font-size:1.1rem;transform:rotate(-2deg)">x̄ = Σxᵢ / n</span>
@@ -1309,7 +1321,7 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
 
       <p style="font-size:1.15rem; line-height:1.8;">
         📧 Correo: congresocic@mescyt.gob.do<br>
-        ☎ Teléfono: (809) 731-1100 Ext. 4522<br>
+        ☎ Teléfono: (809) 731-1100 Ext. XXXX<br>
         🕒 Horario de atención: Lunes a viernes, de 8:00 a.m. a 4:00 p.m.
       </p>
 
@@ -1457,6 +1469,29 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
   }
   window.addEventListener('cic:contenido',function(e){aplicar(e.detail)});
   pintar(); if(window.__cicContenido) aplicar(window.__cicContenido); tic(); setInterval(tic,1000);
+})();
+</script>
+<script>
+/* Partículas bioluminiscentes de la portada (ligeras; se detienen fuera de vista) */
+(function(){
+  var c=document.querySelector('.hero .particulas'); if(!c||!c.getContext) return;
+  var x=c.getContext('2d'), P=[], w=0, h=0, dpr=Math.min(window.devicePixelRatio||1,2), vivo=true, raf=0;
+  var quieto=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var COL=['114,212,112','98,146,198','244,241,232'];
+  function medir(){var r=c.getBoundingClientRect(); w=r.width; h=r.height; c.width=w*dpr; c.height=h*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.round(Math.min(90,w*h/9000)); P=[]; for(var i=0;i<n;i++) P.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.4,v:Math.random()*.25+.05,f:Math.random()*6.28,c:COL[i%5===0?1:(i%7===0?2:0)]});}
+  function dibujar(t){x.clearRect(0,0,w,h);
+    for(var i=0;i<P.length;i++){var p=P[i], a=.35+.35*Math.sin(t/900+p.f);
+      if(!quieto){p.y-=p.v; p.x+=Math.sin(t/2000+p.f)*.15; if(p.y<-6){p.y=h+6;p.x=Math.random()*w;}}
+      var g=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5); g.addColorStop(0,'rgba('+p.c+','+a+')'); g.addColorStop(1,'rgba('+p.c+',0)');
+      x.fillStyle=g; x.beginPath(); x.arc(p.x,p.y,p.r*5,0,6.283); x.fill();}
+  }
+  function bucle(t){dibujar(t); if(vivo&&!quieto) raf=requestAnimationFrame(bucle);}
+  function arrancar(){cancelAnimationFrame(raf); if(vivo&&!document.hidden) raf=requestAnimationFrame(bucle);}
+  medir(); dibujar(0);
+  window.addEventListener('resize',function(){medir(); dibujar(performance.now());});
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){vivo=e[0].isIntersecting; arrancar();}).observe(c);
+  document.addEventListener('visibilitychange',arrancar); arrancar();
 })();
 </script>
 <script>window.goatcounter={path:function(){return location.pathname+(location.hash||'#inicio')}};</script>
