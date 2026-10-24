@@ -200,6 +200,79 @@ ul.plain li b{color:var(--ink)}
 .dates div:last-child{border-bottom:0}
 .dates b{font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums}
 
+/* Cronograma de la convocatoria */
+.crono{display:grid;gap:18px}
+.crono-banda{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:20px 24px;border-radius:12px;color:#f3f6fb;background:radial-gradient(80% 140% at 100% 0%,rgba(98,146,198,.35),transparent 60%),linear-gradient(120deg,#0b1729,#0E1C30 60%,#10284a);box-shadow:0 10px 30px -12px rgba(14,28,48,.6);border-bottom:3px solid var(--neon)}
+.crono-eb{display:block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neon)}
+.crono-banda strong{font-family:var(--f-display);font-size:clamp(1.1rem,2.6vw,1.45rem);font-weight:800}
+.crono-rango{display:flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:.95rem}
+.crono-rango b{font-weight:500;padding:6px 10px;border:1px solid rgba(255,255,255,.22);border-radius:6px;background:rgba(255,255,255,.06);white-space:nowrap}
+.crono-rango i{width:42px;height:2px;background:linear-gradient(90deg,var(--cic-azul),var(--neon));position:relative}
+.crono-rango i::after{content:"";position:absolute;right:-2px;top:-4px;border:5px solid transparent;border-left:7px solid var(--neon);border-right:0}
+.vias{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vias .via-sim{grid-column:1/-1}
+.via{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:12px}
+.via header{display:flex;gap:12px;align-items:center}
+.via h4{margin:0;font-family:var(--f-display);font-size:1.05rem;line-height:1.2}
+.via-sub{margin:2px 0 0;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.via-sub b{color:var(--unphu)}
+.via-ico{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--sea-soft);color:var(--sea)}
+.via > p{margin:0;color:var(--muted);font-size:.93rem;text-align:left!important}
+.via-plazo{margin-top:auto;display:grid;gap:2px;padding:10px 12px;border-radius:8px;background:var(--sea-soft);border-left:3px solid var(--sea)}
+.via-plazo span{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.via-plazo time{font-family:var(--f-mono);font-weight:500;font-size:.9rem}
+.via-sim{border:1px solid color-mix(in srgb,var(--unphu) 45%,var(--line));box-shadow:0 12px 30px -18px rgba(67,148,65,.55);background:linear-gradient(180deg,color-mix(in srgb,var(--unphu) 6%,var(--surface)),var(--surface) 40%)}
+.via-sim .via-ico{background:color-mix(in srgb,var(--unphu) 14%,var(--surface));color:var(--unphu)}
+.fases{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.fase{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;position:relative;padding-bottom:14px}
+.fase:last-child{padding-bottom:0}
+.fase:not(:last-child)::before{content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:linear-gradient(var(--unphu),color-mix(in srgb,var(--unphu) 30%,transparent))}
+.fase-n{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:.95rem;color:#fff;background:var(--unphu);box-shadow:0 0 0 4px color-mix(in srgb,var(--unphu) 18%,transparent)}
+.fase-rev .fase-n{background:var(--surface);color:var(--unphu);border:2px solid var(--unphu);box-shadow:none;width:26px;height:26px;margin:2px}
+.fase-tag{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--unphu)}
+.fase h5{margin:2px 0 3px;font-family:var(--f-display);font-size:.98rem;font-weight:700}
+.fase p{margin:0 0 6px;font-size:.86rem;color:var(--muted);text-align:left!important;hyphens:manual!important}
+.fase time{display:inline-block;font-family:var(--f-mono);font-size:.8rem;font-weight:500;padding:3px 8px;border-radius:5px;background:color-mix(in srgb,var(--unphu) 12%,var(--surface));color:var(--ink)}
+.fase-rev h5,.fase-rev time{opacity:.92}
+.gantt{margin:0;padding:18px 18px 26px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.g-meses{position:relative;height:18px;margin-left:190px;font-family:var(--f-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.g-meses span{position:absolute;top:0;padding-left:4px;border-left:1px solid var(--line)}
+.g-filas{position:relative;display:grid;gap:7px;margin-top:6px}
+.g-fila{display:grid;grid-template-columns:182px minmax(0,1fr);gap:8px;align-items:center}
+.g-et{font-size:.8rem;color:var(--muted);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-pista{position:relative;height:16px;border-radius:4px;background:color-mix(in srgb,var(--line) 35%,transparent)}
+.g-grid{position:absolute;top:-4px;bottom:-4px;left:190px;right:0;pointer-events:none}
+.g-grid span{position:absolute;top:0;bottom:0;border-left:1px solid var(--line)}
+.g-bar{position:absolute;top:2px;bottom:2px;border-radius:4px;min-width:5px}
+.g-bar.sim{background:var(--unphu)}
+.g-bar.rev{background:repeating-linear-gradient(135deg,var(--unphu) 0 4px,color-mix(in srgb,var(--unphu) 35%,var(--surface)) 4px 8px)}
+.g-bar.sim2{background:linear-gradient(90deg,var(--unphu),var(--neon))}
+.g-bar.act{background:var(--sea)}
+.g-bar.cic{background:#0E1C30;box-shadow:0 0 0 2px var(--neon)}
+.g-hito{position:absolute;top:1px;width:14px;height:14px;margin-left:-7px;transform:rotate(45deg);background:var(--sargazo);border-radius:2px}
+.g-hito.cic{background:var(--neon);box-shadow:0 0 10px var(--neon)}
+.g-ley{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:26px;font-size:.76rem;color:var(--muted)}
+.g-ley span{display:inline-flex;align-items:center;gap:6px}
+.g-ley i{display:inline-block;width:16px;height:8px;border-radius:3px}
+.g-ley .sim{background:var(--unphu)}.g-ley .rev{background:repeating-linear-gradient(135deg,var(--unphu) 0 3px,color-mix(in srgb,var(--unphu) 35%,var(--surface)) 3px 6px)}.g-ley .act{background:var(--sea)}.g-ley .hito{width:9px;height:9px;transform:rotate(45deg);background:var(--sargazo);border-radius:1px}.g-ley .cic{background:var(--neon)}
+.g-hoy{position:absolute;top:-8px;bottom:-4px;width:0;border-left:2px dashed var(--sargazo);pointer-events:none}
+.g-hoy span{position:absolute;bottom:-18px;left:-14px;font-family:var(--f-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sargazo);background:var(--surface);padding:0 3px}
+.hitos-fin{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.hf{display:grid;gap:4px;align-content:start;padding:12px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--cic-azul)}
+.hf span{font-size:.8rem;color:var(--muted);line-height:1.3}
+.hf b{font-family:var(--f-mono);font-weight:500;font-size:.88rem}
+.hf-not{border-top-color:var(--sargazo)}
+.hf-cic{border-top-color:var(--neon);background:linear-gradient(160deg,#0E1C30,#13294a);border-color:#13294a}
+.hf-cic span{color:rgba(243,246,251,.8)}.hf-cic b{color:#fff}
+@media (min-width:820px){.fases{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.fase{grid-template-columns:1fr;gap:10px;padding-bottom:0}.fase:not(:last-child)::before{left:42px;right:-14px;top:14px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--unphu),color-mix(in srgb,var(--unphu) 25%,transparent))}.fase-rev .fase-n{margin:2px 2px 2px 2px}}
+@media (max-width:980px){.hitos-fin{grid-template-columns:repeat(2,minmax(0,1fr))}.hf-cic{grid-column:1/-1}}
+@media (max-width:640px){.vias{grid-template-columns:1fr}.g-meses{margin-left:0}.g-grid{display:none}.g-et{justify-self:start;position:relative;z-index:2;background:var(--surface);padding-right:6px}.g-fila{grid-template-columns:1fr;gap:3px}.g-et{text-align:left;font-size:.74rem}.g-filas{gap:5px}.crono-banda{padding:18px}.crono-rango{font-size:.82rem;gap:8px}.crono-rango i{width:22px}}
+
+.mini-fases{list-style:none;margin:0;padding:0 0 0 4px;display:grid;gap:8px;counter-reset:f}
+.mini-fases li{display:grid;gap:1px;padding-left:16px;border-left:2px solid var(--unphu);font-size:.84rem;line-height:1.3}
+.mini-fases li.r{border-left-style:dashed;opacity:.85}
+.mini-fases span,.plazo-linea{font-family:var(--f-mono);font-size:.76rem;color:var(--muted)}
+.plazo-linea span{text-transform:uppercase;letter-spacing:.08em;font-size:.66rem;margin-right:6px}
 /* Tabla */
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
 table{border-collapse:collapse;width:100%;min-width:520px;font-size:.93rem}
@@ -628,9 +701,12 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
       </p>
 
       <p>
-        En el caso de los simposios, los resúmenes de las presentaciones
-        individuales serán solicitados posteriormente, una vez la propuesta
-        de simposio haya sido evaluada y aprobada por el Comité Científico.
+        Los simposios se desarrollan en <b>dos fases</b>. En la primera, el
+        coordinador propone el simposio (del 27 de octubre al 15 de diciembre
+        de 2026); el Comité Científico lo revisa y comunica su aprobación entre
+        el 16 de diciembre de 2026 y el 10 de enero de 2027. En la segunda, solo
+        los simposios aprobados reciben los resúmenes de sus presentaciones,
+        hasta el 1 de abril de 2027.
       </p>
     </div>
 
@@ -956,37 +1032,99 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
 
     <h3>Fechas importantes</h3>
 
-    <div class="dates">
+    <div class="crono">
 
-      <div>
-        <span>Recepción de propuestas y resúmenes</span>
-        <b>27 de octubre del 2026</b>
+      <div class="crono-banda">
+        <div>
+          <span class="crono-eb">Convocatoria abierta</span>
+          <strong>Recepción de propuestas y resúmenes</strong>
+        </div>
+        <div class="crono-rango"><b>27 oct 2026</b><i aria-hidden="true"></i><b>1 abr 2027</b></div>
       </div>
 
-      <div>
-        <span>Notificación de aceptación</span>
-        <b>27 de enero del 2027</b>
+      <div class="vias">
+
+        <article class="via via-sim">
+          <header>
+            <span class="via-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.1M12 11.5 6.6 16M12 11.5l5.4 4.5"/></svg></span>
+            <div><h4>Simposios</h4><p class="via-sub">Proceso en <b>dos fases</b></p></div>
+          </header>
+
+          <ol class="fases">
+            <li class="fase">
+              <span class="fase-n">1</span>
+              <div>
+                <span class="fase-tag">Fase 1 · Coordinador/a</span>
+                <h5>Propuesta del simposio</h5>
+                <p>El coordinador presenta el simposio: tema, justificación y participantes previstos.</p>
+                <time>27 oct – 15 dic 2026</time>
+              </div>
+            </li>
+            <li class="fase fase-rev">
+              <span class="fase-n" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div>
+                <span class="fase-tag">Comité Científico</span>
+                <h5>Revisión y aprobación</h5>
+                <p>Se evalúa cada propuesta y se comunica al coordinador si el simposio fue aprobado.</p>
+                <time>16 dic 2026 – 10 ene 2027</time>
+              </div>
+            </li>
+            <li class="fase">
+              <span class="fase-n">2</span>
+              <div>
+                <span class="fase-tag">Fase 2 · Solo simposios aprobados</span>
+                <h5>Recepción de resúmenes</h5>
+                <p>Los participantes de cada simposio aprobado envían los resúmenes de sus presentaciones.</p>
+                <time>Hasta el 1 abr 2027</time>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <article class="via">
+          <header>
+            <span class="via-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 12 4l9 4.5-9 4.5z"/><path d="M7 10.5v4.2c1.4 1.4 3.2 2.1 5 2.1s3.6-.7 5-2.1v-4.2"/><path d="M21 8.5V14"/></svg></span>
+            <div><h4>Cursos, talleres y paneles</h4><p class="via-sub">Una sola fase</p></div>
+          </header>
+          <p>Propuesta completa de la actividad académica mediante el formulario correspondiente.</p>
+          <div class="via-plazo"><span>Recepción</span><time>27 oct 2026 – 1 abr 2027</time></div>
+        </article>
+
+        <article class="via">
+          <header>
+            <span class="via-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M7 12l3-3 2.5 2.5L17 7"/><path d="M12 16v4M8.5 20h7"/></svg></span>
+            <div><h4>Ponencias y carteles científicos</h4><p class="via-sub">Una sola fase</p></div>
+          </header>
+          <p>Envío del resumen del trabajo (máximo 250 palabras, normas APA 7.ª ed.).</p>
+          <div class="via-plazo"><span>Recepción</span><time>27 oct 2026 – 1 abr 2027</time></div>
+        </article>
+
       </div>
 
+      <figure class="gantt" aria-label="Calendario de la convocatoria, de octubre de 2026 a junio de 2027">
+        <div class="g-meses" aria-hidden="true">
+          <span style="left:0%">oct</span><span style="left:11.36%">nov</span><span style="left:21.25%">dic</span><span style="left:32.6%">ene</span><span style="left:43.96%">feb</span><span style="left:54.21%">mar</span><span style="left:65.57%">abr</span><span style="left:76.56%">may</span><span style="left:87.91%">jun</span>
+        </div>
+        <div class="g-filas">
+          <div class="g-grid" aria-hidden="true"><span style="left:0%"></span><span style="left:11.36%"></span><span style="left:21.25%"></span><span style="left:32.6%"></span><span style="left:43.96%"></span><span style="left:54.21%"></span><span style="left:65.57%"></span><span style="left:76.56%"></span><span style="left:87.91%"></span></div>
+          <div class="g-fila"><span class="g-et">Simposios · Fase 1</span><div class="g-pista"><i class="g-bar sim" style="left:9.52%;width:18.32%"></i></div></div>
+          <div class="g-fila"><span class="g-et">Revisión y aprobación</span><div class="g-pista"><i class="g-bar rev" style="left:27.84%;width:9.52%"></i></div></div>
+          <div class="g-fila"><span class="g-et">Simposios · Fase 2</span><div class="g-pista"><i class="g-bar sim2" style="left:37.36%;width:29.67%"></i></div></div>
+          <div class="g-fila"><span class="g-et">Cursos, talleres y paneles</span><div class="g-pista"><i class="g-bar act" style="left:9.52%;width:57.51%"></i></div></div>
+          <div class="g-fila"><span class="g-et">Ponencias y carteles</span><div class="g-pista"><i class="g-bar act" style="left:9.52%;width:57.51%"></i></div></div>
+          <div class="g-fila"><span class="g-et">Notificación de aceptación</span><div class="g-pista"><i class="g-hito" style="left:83.52%"></i></div></div>
+          <div class="g-fila"><span class="g-et">XXII CIC · UNPHU</span><div class="g-pista"><i class="g-bar cic" style="left:95.97%;width:2.93%"></i><i class="g-hito cic" style="left:96.7%"></i></div></div>
+          <div class="g-hoy" id="g-hoy" hidden><span>Hoy</span></div>
+        </div>
+        <figcaption class="g-ley"><span><i class="sim"></i>Simposios</span><span><i class="rev"></i>Revisión del Comité Científico</span><span><i class="act"></i>Recepción en una sola fase</span><span><i class="hito"></i>Notificación</span><span><i class="cic"></i>Congreso</span></figcaption>
+      </figure>
 
-      <div>
-        <span>Semana Dominicana de la Ciencia y la Tecnología</span>
-        <b>20–27 de junio de 2027</b>
-      </div>
-
-      <div>
-        <span>XXII Congreso Internacional de Investigación Científica</span>
-        <b>22–25 de junio de 2027</b>
-      </div>
-
-      <div>
-        <span>Acto inaugural</span>
-        <b>22 de junio de 2027</b>
-      </div>
-
-      <div>
-        <span>Sesiones académicas</span>
-        <b>23–25 de junio de 2027</b>
+      <div class="hitos-fin">
+        <div class="hf hf-not"><span>Notificación de aceptación</span><b>17 de mayo de 2027</b></div>
+        <div class="hf"><span>Semana Dominicana de la Ciencia y la Tecnología</span><b>20–27 de junio de 2027</b></div>
+        <div class="hf hf-cic"><span>XXII Congreso Internacional de Investigación Científica</span><b>22–25 de junio de 2027</b></div>
+        <div class="hf"><span>Acto inaugural</span><b>22 de junio de 2027</b></div>
+        <div class="hf"><span>Sesiones académicas</span><b>23–25 de junio de 2027</b></div>
       </div>
 
     </div>
@@ -1050,9 +1188,8 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
   Las modalidades de presentación de trabajos son ponencia oral y cartel
   científico. Las propuestas de actividades académicas se recibirán mediante
   formularios independientes para simposios, cursos, talleres y paneles. Los
-  resúmenes correspondientes a las presentaciones incluidas en simposios serán
-  solicitados posteriormente una vez la propuesta haya sido aprobada por el
-  Comité Científico.
+  resúmenes de las presentaciones incluidas en simposios se envían en la Fase 2,
+  solo para los simposios aprobados por el Comité Científico.
 </div>
 
   </div>
@@ -1084,11 +1221,17 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
           temática científica o tecnológica de interés.
         </p>
 
+        <ol class="mini-fases">
+          <li><b>Fase 1 · Propuesta del simposio</b><span>27 oct – 15 dic 2026</span></li>
+          <li class="r"><b>Revisión y aprobación</b><span>16 dic 2026 – 10 ene 2027</span></li>
+          <li><b>Fase 2 · Resúmenes de simposios aprobados</b><span>Hasta el 1 abr 2027</span></li>
+        </ol>
+
         <a class="btn solid"
            href="https://forms.cloud.microsoft/r/zXDMHLPFQJ?origin=lprLink" data-goatcounter-click="formulario-simposios"
            target="_blank"
            rel="noopener noreferrer">
-          Formulario de Simposios
+          Proponer simposio (Fase 1)
         </a>
       </div>
 
@@ -1099,6 +1242,7 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
           Actividades académicas orientadas a la formación, actualización,
           intercambio de experiencias y discusión especializada.
         </p>
+        <p class="plazo-linea"><span>Recepción</span> 27 oct 2026 – 1 abr 2027</p>
 
         <a class="btn solid"
            href="https://forms.cloud.microsoft/r/TYKL0XJK99?origin=lprLink" data-goatcounter-click="formulario-cursos-talleres-paneles"
@@ -1115,6 +1259,7 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
           Presentación de trabajos de investigación en modalidad de ponencia
           oral o cartel científico.
         </p>
+        <p class="plazo-linea"><span>Recepción</span> 27 oct 2026 – 1 abr 2027</p>
 
         <a class="btn solid"
            href="https://forms.cloud.microsoft/r/HxpAdA7ug6?origin=lprLink" data-goatcounter-click="formulario-ponencias-carteles"
@@ -1129,9 +1274,7 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
     <div class="note">
       Los resúmenes de ponencias y carteles científicos deberán presentarse
       en un único párrafo, con una extensión máxima de 250 palabras y conforme
-      a las normas APA (7.ª edición). Los resúmenes correspondientes a los
-      simposios serán solicitados posteriormente, una vez aprobada la propuesta
-      por el Comité Científico.
+      a las normas APA (7.ª edición). Los simposios siguen <b>dos fases</b>: primero se propone el simposio (hasta el 15 de diciembre de 2026) y, una vez aprobado por el Comité Científico, se reciben los resúmenes de sus presentaciones (hasta el 1 de abril de 2027).
     </div>
 
   </div>
@@ -1449,6 +1592,10 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
   var MES={enero:0,febrero:1,marzo:2,abril:3,mayo:4,junio:5,julio:6,agosto:7,septiembre:8,setiembre:8,octubre:9,noviembre:10,diciembre:11};
   function fecha(t){var m=String(t||'').toLowerCase().match(/(\d{1,2})\s+de\s+([a-záéíóú]+)(?:\s+de)?\s+(\d{4})/);if(!m||MES[m[2]]===undefined)return null;return new Date(Date.UTC(+m[3],MES[m[2]],+m[1],4));}
   var hitos=[
+    {n:'Cierre de propuestas de simposios (Fase 1)',d:new Date('2026-12-15T23:59:00-04:00')},
+    {n:'Simposios aprobados: inicia la recepción de resúmenes (Fase 2)',d:new Date('2027-01-11T00:00:00-04:00')},
+    {n:'Cierre de recepción de propuestas y resúmenes',d:new Date('2027-04-01T23:59:00-04:00')},
+    {n:'Notificación de aceptación',d:new Date('2027-05-17T00:00:00-04:00')},
     {n:'Semana Dominicana de la Ciencia y la Tecnología',d:new Date('2027-06-20T00:00:00-04:00')},
     {n:'Inauguración del XXII CIC',d:META,meta:true}
   ];
@@ -1482,7 +1629,7 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
   }
   function aplicar(c){
     var f=(c&&c.fechas)||{};
-    [['envio_resumenes','Cierre de envío de resúmenes'],['notificacion_aceptacion','Notificación de aceptación'],['inscripcion_ponentes','Cierre de inscripción de ponentes']].forEach(function(k){
+    [['inscripcion_ponentes','Cierre de inscripción de ponentes']].forEach(function(k){
       var d=fecha(f[k[0]]); if(d) hitos.push({n:k[1],d:d});
     });
     pintar();
@@ -1512,6 +1659,14 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
   window.addEventListener('resize',function(){medir(); dibujar(performance.now());});
   if('IntersectionObserver' in window) new IntersectionObserver(function(e){vivo=e[0].isIntersecting; arrancar();}).observe(c);
   document.addEventListener('visibilitychange',arrancar); arrancar();
+})();
+</script>
+<script>
+(function(){var h=document.getElementById('g-hoy'); if(!h) return;
+  var S=new Date('2026-10-01T00:00:00-04:00'), E=new Date('2027-07-01T00:00:00-04:00'), n=new Date();
+  if(n<S||n>E) return; var p=(n-S)/(E-S); var pista=document.querySelector('.g-pista'), filas=h.parentNode;
+  function pos(){var a=pista.getBoundingClientRect(), b=filas.getBoundingClientRect(); h.style.left=(a.left-b.left+a.width*p)+'px';}
+  h.hidden=false; pos(); window.addEventListener('resize',pos); window.addEventListener('hashchange',function(){setTimeout(pos,50)});
 })();
 </script>
 <script>window.goatcounter={path:function(){return location.pathname+(location.hash||'#inicio')}};</script>
