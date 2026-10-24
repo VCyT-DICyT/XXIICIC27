@@ -211,6 +211,11 @@ tr:last-child td{border-bottom:0}
 /* Libro */
 .book{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:28px;align-items:center}
 .cover{aspect-ratio:3/4;max-width:100%;background:var(--hero-bg);color:var(--hero-ink);border-radius:4px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 30px rgba(0,54,112,.25);border-bottom:6px solid #c23539}
+.cover-img{display:block;max-width:100%;border-radius:4px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 26px rgba(14,28,48,.18);transition:transform .2s}
+.cover-img:hover{transform:translateY(-3px)}
+.cover-img img{display:block;width:100%;height:auto}
+.btn-pdf{display:inline-block;padding:10px 16px;border-radius:6px;background:var(--sea);color:var(--surface);font-weight:600;text-decoration:none;font-size:.92rem}
+.btn-pdf:hover{opacity:.9}
 .cover.old{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-bottom:6px solid var(--muted);box-shadow:none}
 .cover b{font-family:var(--f-display);font-size:1.4rem;line-height:1.05}
 .cover small{font-family:var(--f-mono);font-size:.65rem;opacity:.8}
@@ -1219,6 +1224,21 @@ main .grid3 .card p,main .area p{text-align:left;-webkit-hyphens:manual;hyphens:
         <div><div class="eyebrow">ISBN</div><div class="isbn">978-9945-9484-9-3</div></div>
         <div><div class="eyebrow">Editor</div><p>Staling Cordero Brito</p></div>
         <div><div class="eyebrow">Formato</div><p>PDF · <span data-campo="publicaciones.libro_xxi_enlace" data-tipo="enlace" data-texto="Descargar el libro">enlace de descarga <span class="pending">Por completar</span></span></p></div>
+      </div>
+    </div>
+
+    <div class="archivo">
+      <div class="head" style="margin-top:36px"><span class="eyebrow">Archivo histórico</span><h3>Ediciones anteriores</h3></div>
+      <div class="book">
+        <a class="cover-img" href="publicaciones/libro-resumenes-i-congreso-2005.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-libro-i-congreso-2005">
+          <img src="publicaciones/portada-i-cic-2005.jpg" alt="Portada del I Congreso Interdisciplinario de Investigación Científica, 8 al 10 de junio de 2005" width="300" height="407" loading="lazy">
+        </a>
+        <div class="stack">
+          <h3>I Congreso Interdisciplinario de Investigación Científica · 2005</h3>
+          <p>Primera edición del congreso, celebrada del 8 al 10 de junio de 2005 en el Hotel Coral Hamaca Beach Resort, República Dominicana. Recoge la relación de resúmenes (abstracts) presentados, en orden alfabético.</p>
+          <div><div class="eyebrow">Formato</div><p>PDF · 44 páginas · 1,8 MB</p></div>
+          <div><a class="btn-pdf" href="publicaciones/libro-resumenes-i-congreso-2005.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-libro-i-congreso-2005">Descargar el libro de resúmenes (PDF)</a></div>
+        </div>
       </div>
     </div>
   </div>
